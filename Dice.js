@@ -38,7 +38,8 @@ class Dice {
         for (let i = 0; i < 6; i++) {
             for (let j = 0; j < 9; j++) {
                 if (pointIndex[i].includes(j)) {
-                    if (faces[i][j].classList.contains("off")) faces[i][j].classList.remove("off");
+                    if (faces[i][j].classList.contains("off")) 
+                        faces[i][j].classList.remove("off");
                     faces[i][j].classList.add("on");
                 }
             }
