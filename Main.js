@@ -36,12 +36,7 @@ box.forEach((tile) => tile.addEventListener("click", () => {
     tile.disabled = true;
 
     if (num === 0) {
-        for (let i = 0; i < 9; i++) {
-            if (!box[i].classList.contains("flipped")) {
-                box[i].disabled = false;
-            }
-        }
-
+        // need to keep tiles disabled but not keep greyed out
         roll.disabled = false;
     }
     else {
@@ -84,14 +79,11 @@ const renderTiles = () => {
             clickable.push(useable[i]);
         }
         else {  // check for tiles to add to num
-            for (let j = 0; j < useable.length; j++) {
-                let jID = parseInt(useable[j].id);
-
-                if (iID + jID === num) {
-                    clickable.push(useable[i]);
-                    clickable.push(useable[j]);
+            let activate = numMatch(useable, num);
+            for (let i = 0; i < useable.length; i++) {
+                if (activate.includes(parseInt(useable[i].id))) {
                     useable[i].disabled = false;
-                    useable[j].disabled = false;
+                    clickable.push(useable[i]);
                 }
             }
         }
@@ -105,4 +97,20 @@ const gameOver = () => {
     // turn into pop-up in future
     end.classList.remove("clear");
     end.classList.add("end");
+}
+
+const numMatch = (list, sum) => {
+    let viable = [];
+    for (let i = list.length - 1; i >= 0; i--) {
+        let id = parseInt(list[i].id);
+        if (id === sum) viable.push(id);
+        else if (id < sum) {
+            let tmp = numMatch(list.slice(0, i), sum - id)
+            if (tmp.length > 0) {
+                viable.push(id);
+                viable.push(...tmp);
+            }
+        }
+    }
+    return viable;
 }
