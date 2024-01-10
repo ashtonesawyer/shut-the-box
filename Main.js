@@ -4,6 +4,8 @@ const die2 = document.querySelector("#die2");
 const roll = document.querySelector("#roll");
 const end = document.querySelector("#end");
 const again = document.querySelector("#again");
+const popup = document.querySelector("#popup");
+const overlay = document.querySelector('.overlay');
 
 let dice1 = new Dice();
 let dice2 = new Dice();
@@ -55,8 +57,10 @@ again.addEventListener("click", () => {
         box[i].disabled = false;
     }
 
-    end.classList.add("clear");
-    end.classList.remove("end");
+    // end.classList.add("clear");
+    // end.classList.remove("end");
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
 
     num = 0;
 });
@@ -94,9 +98,8 @@ const renderTiles = () => {
 }
 
 const gameOver = () => {
-    // turn into pop-up in future
-    end.classList.remove("clear");
-    end.classList.add("end");
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
 }
 
 const numMatch = (list, sum) => {
