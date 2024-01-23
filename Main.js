@@ -4,22 +4,25 @@ const die2 = document.querySelector("#die2");
 const roll = document.querySelector("#roll");
 const end = document.querySelector("#end");
 const again = document.querySelector("#again");
-const popup = document.querySelector("#popup");
 const overlay = document.querySelector('.overlay');
 
 let dice1 = new Dice();
 let dice2 = new Dice();
 let num = 0;
+tmp = 0;
 
 roll.addEventListener("click", () => {
     // need two instances of Dice() so that they aren't sharing faces in
     // case result1 == result2
     let result1 = dice1.roll();
     let result2 = dice2.roll();
+    const test = [10, 10, 10, 10, 5]
 
     console.log(result1 +1, result2 +1);
 
-    num = result1 + result2 + 2;
+    // num = result1 + result2 + 2;
+    num = test[tmp];
+    tmp += 1;
 
     die1.replaceChildren(...dice1.faces[result1]);
     die2.replaceChildren(...dice2.faces[result2]);
@@ -38,7 +41,8 @@ box.forEach((tile) => tile.addEventListener("click", () => {
     tile.disabled = true;
 
     if (num === 0) {
-        // need to keep tiles disabled but not keep greyed out
+        // to-do: keep tiles disabled but not keep greyed out
+        checkWin();
         roll.disabled = false;
     }
     else {
@@ -57,8 +61,6 @@ again.addEventListener("click", () => {
         box[i].disabled = false;
     }
 
-    // end.classList.add("clear");
-    // end.classList.remove("end");
     popup.style.display = 'none';
     overlay.style.display = 'none';
 
@@ -93,12 +95,33 @@ const renderTiles = () => {
         }
     }
 
+    if (useable.length < 1)
+        win();
+
     if (clickable.length < 1)
-        gameOver();
+        setTimeout(() => gameOver(), 500);
 }
 
 const gameOver = () => {
     overlay.style.display = 'block';
+    end.textContent = 'Game Over';
+    end.style.color = 'var(--red)';
+    popup.style.display = 'block';
+}
+
+const checkWin = () => {
+    for (let i = 0; i < 9; i++) {
+        if (!box[i].classList.contains("flipped")) {
+            return;
+        }
+    }
+    win();
+}
+
+const win = () => {
+    overlay.style.display = 'block';
+    end.textContent = 'You Win!';
+    end.style.color = 'var(--green)';
     popup.style.display = 'block';
 }
 
