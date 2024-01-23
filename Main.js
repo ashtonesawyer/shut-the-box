@@ -9,7 +9,6 @@ const overlay = document.querySelector('.overlay');
 let dice1 = new Dice();
 let dice2 = new Dice();
 let num = 0;
-tmp = 0;
 
 roll.addEventListener("click", () => {
     // need two instances of Dice() so that they aren't sharing faces in
@@ -20,9 +19,7 @@ roll.addEventListener("click", () => {
 
     console.log(result1 +1, result2 +1);
 
-    // num = result1 + result2 + 2;
-    num = test[tmp];
-    tmp += 1;
+    num = result1 + result2 + 2;
 
     die1.replaceChildren(...dice1.faces[result1]);
     die2.replaceChildren(...dice2.faces[result2]);
