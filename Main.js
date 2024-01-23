@@ -38,7 +38,10 @@ box.forEach((tile) => tile.addEventListener("click", () => {
     tile.disabled = true;
 
     if (num === 0) {
-        // to-do: keep tiles disabled but not keep greyed out
+        box.forEach((tile) => {
+            if (!tile.classList.contains("flipped"))
+                tile.disabled = true;
+        })
         checkWin();
         roll.disabled = false;
     }
@@ -91,9 +94,6 @@ const renderTiles = () => {
             }
         }
     }
-
-    if (useable.length < 1)
-        win();
 
     if (clickable.length < 1)
         setTimeout(() => gameOver(), 500);
