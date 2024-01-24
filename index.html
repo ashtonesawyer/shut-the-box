@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shut The Box</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="Dice.js"></script>
-  <script src="Box.js"></script>
-  <script defer src="Main.js"></script>
-</head>
-<body>
-  <div class="box">
-    <button class="tile" id="1">1</button>
-    <button class="tile" id="2">2</button>
-    <button class="tile" id="3">3</button>
-    <button class="tile" id="4">4</button>
-    <button class="tile" id="5">5</button>
-    <button class="tile" id="6">6</button>
-    <button class="tile" id="7">7</button>
-    <button class="tile" id="8">8</button>
-    <button class="tile" id="9">9</button>
-  </div>
-  <div class="dice">
-    <div class="die" id="die1">
-      <div class="face"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shut The Box</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="Dice.js"></script>
+    <script src="Box.js"></script>
+    <script defer src="Main.js"></script>
+  </head>
+
+  <body>
+    <div class="box">
+      <button class="tile" id="1">1</button>
+      <button class="tile" id="2">2</button>
+      <button class="tile" id="3">3</button>
+      <button class="tile" id="4">4</button>
+      <button class="tile" id="5">5</button>
+      <button class="tile" id="6">6</button>
+      <button class="tile" id="7">7</button>
+      <button class="tile" id="8">8</button>
+      <button class="tile" id="9">9</button>
     </div>
-    <div class="die" id="die2"> 
-      <div class="face"></div>    
+    <div class="dice">
+      <div class="die" id="die1">
+        <div class="face"></div>
+      </div>
+      <div class="die" id="die2">
+        <div class="face"></div>
+      </div>
     </div>
-  </div>
-  <div class="play">
-    <button id="roll">Roll Dice</button>
-  </div>
-  <div class="overlay"></div>
-  <div class="popup" id="popup">
-    <p class="end-text" id="end"></p>
-    <button class="end-btn" id="again">Play Again</button>
-  </div>
-</body>
+    <div class="play">
+      <button id="roll">Roll Dice</button>
+    </div>
+    <div class="overlay"></div>
+    <div class="popup" id="popup">
+      <p class="end-text" id="end"></p>
+      <button class="end-btn" id="again">Play Again</button>
+    </div>
+  </body>
+</html>
