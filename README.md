@@ -15,4 +15,4 @@ Once the dice are rolled, total the value and then "shut" any of the open number
 Re-roll until either it's not possible to reach the total (losing the game) or all of the tiles are flipped (winning the game)
 
 ## Use
-The site it hosted at [ashtonesawyer.github.io/shut-the-box](ashtonesawyer.github.io/shut-the-box)
+The site it hosted at [ashtonesawyer.github.io/shut-the-box](https://ashtonesawyer.github.io/shut-the-box/)

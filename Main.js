@@ -11,11 +11,12 @@ let dice2 = new Dice();
 let num = 0;
 
 roll.addEventListener("click", () => {
+  shuffle(); // visual for dice roll
+
   // need two instances of Dice() so that they aren't sharing faces in
   // case result1 == result2
   let result1 = dice1.roll();
   let result2 = dice2.roll();
-  const test = [10, 10, 10, 10, 5];
 
   console.log(result1 + 1, result2 + 1);
 
@@ -94,6 +95,23 @@ const renderTiles = () => {
   }
 
   if (clickable.length < 1) setTimeout(() => gameOver(), 500);
+};
+
+const shuffle = () => {
+  let faces1 = [];
+  let faces2 = [];
+  const dice1 = new Dice();
+  const dice2 = new Dice();
+
+  for (let i = 0; i < 5; i++) {
+    faces1.push(Math.floor(Math.random() * 6));
+    faces2.push(Math.floor(Math.random() * 6));
+  }
+
+  for (let i = 0; i < 5; i++) {
+    die1.replaceChildren(...dice1.faces[faces1[i]]);
+    die2.replaceChildren(...dice2.faces[faces2[i]]);
+  }
 };
 
 const gameOver = () => {
