@@ -16,11 +16,8 @@ class Dice {
     for (let i = 0; i < 6; i++) {
       let face = [];
       for (let j = 0; j < 9; j++) {
-        // maybe replace period with font awesome circle
-        // -- would take some refactoring to do but might look nicer
         let point = document.createElement("i");
         point.setAttribute("class", "fa-solid fa-circle fa-2xs die-point off");
-        // point.textContent = ".";
         face.push(point);
       }
       faces.push(face);
