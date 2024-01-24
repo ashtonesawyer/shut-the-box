@@ -14,5 +14,22 @@ Once the dice are rolled, total the value and then "shut" any of the open number
 
 Re-roll until either it's not possible to reach the total (losing the game) or all of the tiles are flipped (winning the game)
 
+## To-Do
+- Impliment single die choice
+- Design:
+    - Color (background, elements)
+    - Animation (dice)
+    - Contrast (button/tile states)
+    - Proportions (size of dice box)
+- How-to pop-up
+
+## Possible Expansion
+I would like to add an option to play against a bot. This would involve:
+- Adding a scoring system to name a winner if neither shut the box
+- Changing the UI
+    - Option to switch between the multi/single player modes
+    - For 2-player mode: make room for a second set of tiles
+- Writing a bot algorithm
+
 ## Use
-The site it hosted at [ashtonesawyer.github.io/shut-the-box](https://ashtonesawyer.github.io/shut-the-box/)
+The site it hosted at <https://ashtonesawyer.github.io/shut-the-box>
