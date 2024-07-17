@@ -15,7 +15,7 @@ Once the dice are rolled, total the value and then "shut" any of the open number
 Re-roll until either it's not possible to reach the total (losing the game) or all of the tiles are flipped (winning the game)
 
 ## To-Do
-- Impliment single die choice
+- ~~Impliment single die choice~~
 - Design:
     - Color (background, elements)
     - Animation (dice)
